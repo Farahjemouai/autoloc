@@ -5,9 +5,6 @@ import lombok.*;
 import tn.esprit.autoloc.entities.enums.Categorie;
 import tn.esprit.autoloc.entities.enums.EtatVoiture;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
@@ -31,11 +28,4 @@ public class Voiture {
 
     @Enumerated(EnumType.STRING)
     private EtatVoiture etat;
-
-    @ManyToOne
-    @JoinColumn(name = "id_agence")
-    private Agence agence;
-
-    @OneToMany(mappedBy = "voiture", cascade = CascadeType.ALL)
-    private List<Contrat> contrats = new ArrayList<>();
 }

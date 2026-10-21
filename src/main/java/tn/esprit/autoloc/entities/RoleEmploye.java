@@ -4,9 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import tn.esprit.autoloc.entities.enums.Role;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
@@ -23,8 +20,4 @@ public class RoleEmploye {
     private Role role;
 
     private String description;
-
-
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
-    private List<Employe> employes = new ArrayList<>();
 }

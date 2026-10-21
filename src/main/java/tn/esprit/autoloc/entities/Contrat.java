@@ -24,16 +24,4 @@ public class Contrat {
 
     @Enumerated(EnumType.STRING)
     private EtatContrat etat;
-
-    @ManyToOne
-    @JoinColumn(name = "id_client")
-    private Client client;
-
-    @ManyToOne
-    @JoinColumn(name = "id_voiture")
-    private Voiture voiture;
-
-    @ManyToOne
-    @JoinColumn(name = "id_employe")
-    private Employe employe;
 }
