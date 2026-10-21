@@ -24,12 +24,15 @@ public class Agence {
     private String adresse;
     private String telephone;
 
+    // Une agence emploie plusieurs employés
     @OneToMany(mappedBy = "agence", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Employe> employes = new ArrayList<>();
 
+    // Une agence possède plusieurs voitures
     @OneToMany(mappedBy = "agence", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Voiture> voitures = new ArrayList<>();
 
+    // Une agence sert plusieurs clients, un client peut être lié à plusieurs agences
     @ManyToMany
     @JoinTable(
             name = "agence_client",

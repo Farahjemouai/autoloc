@@ -25,14 +25,17 @@ public class Contrat {
     @Enumerated(EnumType.STRING)
     private EtatContrat etat;
 
+    // Plusieurs contrats peuvent concerner un même client
     @ManyToOne
     @JoinColumn(name = "id_client")
     private Client client;
 
+    // Plusieurs contrats peuvent porter sur une même voiture (historique)
     @ManyToOne
     @JoinColumn(name = "id_voiture")
     private Voiture voiture;
 
+    // Plusieurs contrats peuvent être gérés par un même employé
     @ManyToOne
     @JoinColumn(name = "id_employe")
     private Employe employe;

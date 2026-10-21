@@ -32,10 +32,12 @@ public class Voiture {
     @Enumerated(EnumType.STRING)
     private EtatVoiture etat;
 
+    // Plusieurs voitures appartiennent à une agence
     @ManyToOne
     @JoinColumn(name = "id_agence")
     private Agence agence;
 
+    // Une voiture peut avoir plusieurs contrats (historique)
     @OneToMany(mappedBy = "voiture", cascade = CascadeType.ALL)
     private List<Contrat> contrats = new ArrayList<>();
 }

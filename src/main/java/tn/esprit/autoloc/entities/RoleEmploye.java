@@ -24,7 +24,7 @@ public class RoleEmploye {
 
     private String description;
 
-
+    // Un rôle est attribué à plusieurs employés
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
     private List<Employe> employes = new ArrayList<>();
 }

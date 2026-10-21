@@ -27,11 +27,11 @@ public class Client {
     private String adresse;
     private String permisConduire;
 
-
+    // Un client peut avoir plusieurs contrats de location
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Contrat> contrats = new ArrayList<>();
 
-
+    // Un client peut être lié à plusieurs agences (côté inverse)
     @ManyToMany(mappedBy = "clients")
     private Set<Agence> agences = new HashSet<>();
 }
