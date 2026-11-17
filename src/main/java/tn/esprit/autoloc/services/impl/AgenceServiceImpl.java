@@ -42,7 +42,7 @@ public class AgenceServiceImpl implements IAgenceService {
         return agenceRepository.findAll();
     }
 
-    // Question 2 : délai fixe de 2 minutes après la fin de chaque exécution
+    // Question 2
     @Scheduled(fixedDelay = 120000)
     public void suivreNombreAgences() {
         List<Agence> agences = agenceRepository.findAll();

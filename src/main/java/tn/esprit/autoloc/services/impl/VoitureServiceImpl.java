@@ -42,7 +42,7 @@ public class VoitureServiceImpl implements IVoitureService {
         return voitureRepository.findAll();
     }
 
-    // Question 1 : démarre 5s après le démarrage, puis toutes les 60s
+    // Question 1
     @Scheduled(initialDelay = 5000, fixedRate = 60000)
     public void actualiserEtatVehicules() {
         List<Voiture> voitures = voitureRepository.findAll();
@@ -52,7 +52,7 @@ public class VoitureServiceImpl implements IVoitureService {
         System.out.println("===================================");
     }
 
-    // Question 3 : tous les lundis à 09h00
+    // Question 3
     @Scheduled(cron = "0 0 9 * * MON")
     public void genererRapportVehicules() {
         List<Voiture> voitures = voitureRepository.findAll();
